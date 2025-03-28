@@ -80,15 +80,10 @@ public class Main {
                 () -> System.out.println("No hay mensaje.")
         );
 
-        /// USAR
-
+        /// USAR OPTIONAL PARA CONTAR LA CANTIDAD DE LETRAS QUE HAY EN UN STRING O DECIR QUE NO HAY MENSAJE SI SE MANDA UN VACIO
         Optional<String> palabraContar = Optional.of("hola");
-        palabraContar.ifPresent(
-                palabraContar.map(msg -> msg.length())
-                        .orElse(() -> System.out.println("no hay mensaje"))
-
-
-        );
-
+        String  resultado = palabraContar.map(msg -> "la palabra tiene " + msg.length() + " letras")
+                .orElse("no hay mensaje");
+        System.out.println(resultado);
     }
 }
